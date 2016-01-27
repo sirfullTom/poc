@@ -1,0 +1,86 @@
+<ion-toolbar>
+  <ion-buttons start>
+    <button (click)="dismiss()">Annuler</button>
+  </ion-buttons>
+  <ion-title>Changement du statut</ion-title>
+   <ion-buttons end>
+    <button (click)="update()">Modifier</button>
+  </ion-buttons>
+</ion-toolbar>
+
+<ion-content class="updateStatus outer-content">
+   <ion-list>
+    <ion-list-header>Tracks</ion-list-header>
+    <ion-toggle>
+      <span class="dot"></span>
+      Actif
+    </ion-toggle>
+	
+  </ion-list>
+
+   <ion-list radio-group >
+
+      <ion-list-header>Statut</ion-list-header>
+
+      <ion-radio value="golang" checked="true">
+      A réaliser
+      </ion-radio>
+
+      <ion-radio value="rust">
+        A contrôler
+      </ion-radio>
+
+      <ion-radio value="python">
+       A réparer
+      </ion-radio>
+
+      <ion-radio value="ruby">
+      A couper
+      </ion-radio>
+
+      <ion-radio value="clojure">
+       A traiter thermiquement
+      </ion-radio>
+
+      <ion-radio value="java">
+        Conforme
+      </ion-radio>
+
+      <ion-radio value="php">
+        Coupée
+      </ion-radio>
+
+      <ion-radio value="dotnet">
+        Contrôle en cours
+      </ion-radio>
+
+      <ion-radio value="cplusplus">
+        Contrôle(s) conforme(s)
+      </ion-radio>
+
+      <ion-radio value="scala">
+        Non Conforme
+      </ion-radio>
+
+      <ion-radio value="haskell">
+        N/A
+      </ion-radio>
+
+      <ion-radio value="erlang">
+        Réalisée
+      </ion-radio>
+	  
+	   <ion-radio value="erlang2">
+        Traitée thermiquement
+      </ion-radio>
+	  
+	   <ion-radio value="erlang3">
+        A planifier
+      </ion-radio>
+
+	  <ion-radio value="erlang4">
+        Supprimée
+      </ion-radio>
+    </ion-list>
+  
+</ion-content>

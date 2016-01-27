@@ -1,0 +1,23 @@
+
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Contrôles soudures</ion-title>
+</ion-navbar>
+
+<ion-searchbar [(ngModel)]="searchQuery" (input)="getItems($event)"></ion-searchbar>
+<ion-content class="weldingControls">
+	 <div [hidden]="loading" *ngFor="#entity of entities">
+		<ion-list-header>Affaire {{entity.name}}</ion-list-header>
+		<ion-list>
+			 <ion-item ion-item *ngFor="#control of entity.controls" (click)="itemTapped($event, control)">
+				<h2>{{control.attributes.irm_weldid.name}}</h2>
+				<p>{{control.attributes.irm_caseitemid.name }} - {{control.attributes.irm_planid.name }}</p>
+				<p>{{control.attributes.irm_weldingcontroltype.formattedValue }}</p>
+				<h3 item-right>{{control.attributes.irm_controlstatus.formattedValue}}</h3>
+			</ion-item>
+		</ion-list>
+	</div>
+	<img [hidden]="!loading" style="display: block; margin: 0 auto; height:100px; width:100px; " src="http://womenshealthdpg.org/wp-content/themes/womenshealth2014/images/loading.gif"/>
+</ion-content>

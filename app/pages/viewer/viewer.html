@@ -1,0 +1,30 @@
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+   <ion-title>Contrôle soudure - Documents</ion-title>
+</ion-navbar>
+
+<button fab fab-top fab-right class="viewer fabPicture" (click)="takePhoto($event)">
+	<ion-icon name='camera'></ion-icon>
+</button>
+<ion-content class="viewer">
+	<ion-card *ngFor="#picture of pictures">
+
+		<img src="{{picture.data}}"/>
+
+		<ion-card-content>
+		  <h2 class="card-title">
+			{{picture.title}}
+		  </h2>
+		  <p>{{picture.date}}</p>
+		  <p>{{picture.description}}</p>
+		</ion-card-content>
+		<ion-item>
+			<button clear item-right danger>
+			  <ion-icon name='trash'></ion-icon>
+			  Supprimer
+			</button>
+		</ion-item>
+  </ion-card>
+</ion-content>

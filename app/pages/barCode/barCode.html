@@ -1,0 +1,36 @@
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+  <ion-title>Code barre</ion-title>
+</ion-navbar>
+
+<ion-content>
+	<p [hidden]="showBarCode" id="codeMsg">
+		Veuillez scanner le code barre
+	</p>
+	<p [hidden]="!showBarCode" id="codeContent">
+		<ion-list inset>
+			<ion-list-header>
+				Code barre 
+			</ion-list-header>
+			<ion-item>
+				Format
+				<ion-note item-right>
+					<span id="codeFormat">{{barCodeData.format}}</span>
+				</ion-note>
+			</ion-item>
+			<ion-item>
+				Valeur
+				<ion-note item-right>
+					<span id="codeTxt">{{barCodeData.text}}</span>
+				</ion-note>
+			</ion-item>
+			<button full> Afficher le contrôle soudure</button>		
+		</ion-list>
+	</p>
+</ion-content>
+
+<button fab dark fab-bottom fab-center style="z-index: 999" (click)="scanBarCode($event)">
+  <ion-icon name='barcode' is-active="false"></ion-icon>
+</button>

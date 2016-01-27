@@ -1,0 +1,41 @@
+<ion-navbar *navbar>
+  <button menuToggle>
+    <ion-icon name="menu"></ion-icon>
+  </button>
+   <ion-title>Contrôle soudure</ion-title>
+</ion-navbar>
+
+<button fab fab-top fab-right class="editStatus" (click)="updateStatus($event)">
+	<ion-icon name='open'></ion-icon>
+</button>
+<ion-content class="weldingControlDetails">
+	<ion-list inset>
+		<ion-list-header>
+			Informations
+		</ion-list-header>
+		<ion-item>
+			Affaire 
+			<ion-note item-right>
+				{{entity.attributes.irm_affaireid.name}}
+			</ion-note>
+		</ion-item>
+		<ion-item>
+			Unité de suivi 
+			<ion-note item-right>
+				{{entity.attributes.irm_caseitemid.name}}
+			</ion-note>
+		</ion-item>
+		<ion-item>
+			Plan 
+			<ion-note item-right>
+				{{entity.attributes.irm_planid.name}}
+			</ion-note>
+		</ion-item>
+		<ion-item>
+			Soudure 
+			<ion-note item-right>
+				{{entity.attributes.irm_weldid.name}}
+			</ion-note>
+		</ion-item>
+	</ion-list>
+</ion-content>

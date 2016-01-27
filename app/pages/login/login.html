@@ -1,0 +1,31 @@
+
+<ion-navbar *navbar>
+  <ion-title>Authentification</ion-title>
+</ion-navbar>
+
+
+<ion-content padding class="login">
+	  
+	<ion-list>
+	  
+	   <ion-input floating-label>
+		<ion-label>Domaine</ion-label>
+		<input type="text" [(ngModel)]="data.domain" >
+	  </ion-input>
+
+	  <ion-input floating-label>
+		<ion-label>Utilisateur</ion-label>
+		<input type="text" [(ngModel)]="data.user" >
+	  </ion-input>
+
+	  <ion-input floating-label>
+		<ion-label>Mot de passe</ion-label>
+		<input type="password" [(ngModel)]="data.password" >
+	  </ion-input>
+
+	</ion-list>
+	
+	<div padding>
+		<button block (click)="login()">Se connecter</button>
+	</div>
+</ion-content>
