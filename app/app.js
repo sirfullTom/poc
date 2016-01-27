@@ -73,20 +73,17 @@ class MyApp {
 	 debugger;
 	  //check authentication informations
 	  this.dataBase.getAuth().then((userInfos) => {
-	    debugger;
 	    this.setUserInfos(userInfos);
 		this.soapService.setAuth(userInfos.auth);
-		console.log('set user ok');
 		this.rootPage = WeldingControls;
-	  }, function(){
+	  }, () => {
 		this.rootPage = LoginPage;
 	  });
   }
 
   listenToLoginEvents() {
     this.events.subscribe('user:login', (userInfos) => {
-	  debugger;
-      this.setUserInfos(userInfos);
+      this.setUserInfos(userInfos[0]);
     });
   }
   
